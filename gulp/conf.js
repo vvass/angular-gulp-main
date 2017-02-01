@@ -38,18 +38,6 @@ module.exports.scripts = {
   dest: `${DIR.DEST}${DIR.PATH}/js`
 };
 
-module.exports.pug = {
-  src: [
-    `${DIR.SRC}/**/*.pug`,
-    `!${DIR.SRC}/**/_**/*.pug`,
-    `!${DIR.SRC}/**/_*.pug`
-  ],
-  dest: `${DIR.DEST}${DIR.PATH}`,
-  opts: {
-    pretty: true
-  }
-};
-
 module.exports.sass = {
   src: [
     `${DIR.SRC}/**/*.{sass,scss}`,
