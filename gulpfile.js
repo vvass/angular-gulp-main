@@ -11,6 +11,7 @@ requireDir('./gulp/tasks');
 gulp.task('predefault', cb => {
   runSequence(
     ['sass', 'watchify', 'copy-vendor-script'],
+    'wiredep',
     'serve',
     cb
   );
@@ -18,8 +19,8 @@ gulp.task('predefault', cb => {
 
 gulp.task('default', ['predefault'], () => {
   gulp.watch(
-    [`./${DIR.SRC}/**/*.pug`],
-    ['pug', reload]
+    [`./${DIR.SRC}/**/*.html`],
+    reload
   );
 
   gulp.watch(

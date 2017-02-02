@@ -1,0 +1,25 @@
+<div id="wrapper" ng-controller="MainController as mainController2">
+    <div id="wrapper-sub">
+        <!--- Header -->
+        <header>
+            <!-- Navigation Bar -->
+            <div ng-include="'./partials/login/navigation-bar.html'"></div>
+        </header>
+        <!--- /Header -->
+
+        <!--- Middle -->
+        <div class="container-fluid" ng-class="'container-login-form'">
+            <div class="row">
+                <div class="col-sm-6 col-md-5">
+                    <!-- Login Form -->
+                    <div ng-include="'./partials/login/login-form.html'"></div>
+                </div>
+                <div class="col-sm-6 col-md-6 pull-right welcome-text">
+                    <!-- Company Description -->
+                    <div ng-include="'./partials/login/company-description.html'"></div>
+                </div>
+            </div>
+        </div>
+        <!--- /Middle -->
+    </div>
+</div>

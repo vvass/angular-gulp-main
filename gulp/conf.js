@@ -68,7 +68,7 @@ module.exports.minify_css = {
 
 module.exports.uglify = {
   src: [
-    `./${DIR.DEST}${DIR.PATH}/js/main.js`,
+    `./${DIR.DEST}${DIR.PATH}/js/app.js`,
   ],
   dest: `${DIR.BUILD}${DIR.PATH}/js`,
   opts: {
@@ -89,6 +89,13 @@ module.exports.copy_vendor_script_to_build = {
   ],
   dest: `${DIR.BUILD}${DIR.PATH}/js/vendor/`
 };
+
+module.exports.wiredep = {
+  src: [
+    `${DIR.SRC}${DIR.PATH}/index.html`
+  ],
+  dest: `${DIR.DEST}${DIR.PATH}`
+}
 
 module.exports.clean = {
   path: [`${DIR.BUILD}${DIR.PATH}`]
