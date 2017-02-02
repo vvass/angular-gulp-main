@@ -4,15 +4,16 @@
 
   angular
     .module('app')
-    .config(config);
+    .config(Configuration);
 
-  function config($routeProvider) {
+  Configuration.$inject = ['$routeProvider'];
+
+  function Configuration($routeProvider) {
     $routeProvider
-      .when('/login', {
-        templateUrl: './partials/login/login-page.html'
-      });
+      .when('/', {
+        templateUrl: '<p>Hello</p>'
+      })
+      .otherwise({redirectTo: '/error'});;
   }
-
-  require('./js/directives/login-directive.js');
 
 }());

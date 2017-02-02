@@ -1,4 +1,6 @@
-node_modules
-dst
-build
-app/bower_components
+.idea/
+.idea/workspace.xml
+node_modules/
+dst/
+build/
+app/bower_components/

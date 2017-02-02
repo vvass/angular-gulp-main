@@ -9,11 +9,12 @@ const DIR = module.exports.DIR =  {
 };
 
 module.exports.serve = {
-  notify: false,
+  notify: true,
   startPath: DIR.PATH,
   ghostMode: false,
   server: {
-    baseDir: DIR.PATH,
+    baseDir: DIR.SRC,
+    port: 3000,
     index: 'index.html',
     routes: {
       [DIR.PATH]: `${DIR.DEST}${DIR.PATH}/`
@@ -24,7 +25,7 @@ module.exports.serve = {
 module.exports.scripts = {
   common: '',
   entryFiles: [
-    `./${DIR.SRC}/app.js`,
+    `./${DIR.SRC}/module/app.js`
   ],
   browserifyOpts: {
     transform: [
