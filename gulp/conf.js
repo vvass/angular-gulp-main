@@ -25,7 +25,7 @@ module.exports.serve = {
 module.exports.scripts = {
   common: '',
   entryFiles: [
-    `./${DIR.SRC}/module/app.js`
+    `./${DIR.SRC}/main.js`
   ],
   browserifyOpts: {
     transform: [
@@ -66,6 +66,11 @@ module.exports.minify_css = {
   src: `${DIR.DEST}${DIR.PATH}/css/main.css`,
   dest: `${DIR.BUILD}${DIR.PATH}/css`
 };
+
+module.exports.javascript = {
+  src: `${DIR.SRC}/js/**/*.js`,
+  dest: `${DIR.SRC}${DIR.PATH}/`
+}
 
 module.exports.uglify = {
   src: [

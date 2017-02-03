@@ -1,6 +1,5 @@
-/**
- * Created by vvass on 2/2/17.
- */
+'use strict';
+
 angular
   .module('app', ['ngRoute']);
 

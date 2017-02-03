@@ -10,6 +10,7 @@ requireDir('./gulp/tasks');
 
 gulp.task('predefault', cb => {
   runSequence(
+    'javascript',
     ['sass', 'watchify', 'copy-vendor-script'],
     'wiredep',
     'serve',
@@ -29,7 +30,12 @@ gulp.task('default', ['predefault'], () => {
   );
 
   gulp.watch(
-    [`./${DIR.DEST}/**/*.js`],
+    [`./${DIR.SRC}/**/*.js`],
+    reload
+  );
+
+  gulp.watch(
+    [`./${DIR.DEST}/js/main.js`],
     reload
   );
 });
