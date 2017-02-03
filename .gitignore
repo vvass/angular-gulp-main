@@ -1,6 +1,10 @@
 .idea/
 .idea/workspace.xml
 node_modules/
+
+
 dst/
+app/main.js
+
 build/
 app/bower_components/
