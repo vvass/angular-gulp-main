@@ -1,0 +1,44 @@
+footer {
+	width: 100%;
+	float: left;
+	background:$white;
+	color: $black;
+	padding: 10px 0;
+	position: relative;
+	bottom: 0px;
+	z-index: 100;
+	text-align:center;
+	position:relative;
+	z-index:1000;
+	.copyright{
+		width:100%;
+		float:left;
+		padding:7px 0 7px 15px;	
+	}
+	.footer-link{
+		width:100%;
+		float:right;
+		padding:7px 15px 0;
+		font-size:15px;
+		a{
+			color:$dark-gary; 
+			text-decoration:none;
+			&:hover{
+				color:$blue;	
+			}
+		}	
+		span{
+			margin:0 10px;
+			color:#a4a4a4;	
+		}
+	}
+}
+@media (min-width: $screen-sm-min) { 
+footer {
+	.copyright,
+	.footer-link
+	{
+		width:auto;
+	}
+}
+}
