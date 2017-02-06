@@ -1,0 +1,18 @@
+.chart-box{
+	background:$white;
+	padding:15px;
+	text-align:center;
+	margin:5px 0 0 0;	
+}
+.tab-section{
+	width:100%;
+	float:left;
+	margin:25px 0 25px 0;	
+}
+@media only screen and (min-width: 768px) {
+.tab-section{
+	.table-responsive{
+		overflow-x:visible;	
+	}
+}	
+}

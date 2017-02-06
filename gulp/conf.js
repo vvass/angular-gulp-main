@@ -9,11 +9,13 @@ const DIR = module.exports.DIR =  {
 };
 
 module.exports.serve = {
-  notify: false,
+  notify: true,
   startPath: DIR.PATH,
   ghostMode: false,
+  open: false, // Useful for dev, stops the browser from opening new windows
   server: {
-    baseDir: DIR.PATH,
+    baseDir: DIR.SRC,
+    port: 3000,
     index: 'index.html',
     routes: {
       [DIR.PATH]: `${DIR.DEST}${DIR.PATH}/`
@@ -24,7 +26,7 @@ module.exports.serve = {
 module.exports.scripts = {
   common: '',
   entryFiles: [
-    `./${DIR.SRC}/app.js`,
+    `./${DIR.SRC}/main.js`
   ],
   browserifyOpts: {
     transform: [
@@ -36,18 +38,6 @@ module.exports.scripts = {
     ]
   },
   dest: `${DIR.DEST}${DIR.PATH}/js`
-};
-
-module.exports.pug = {
-  src: [
-    `${DIR.SRC}/**/*.pug`,
-    `!${DIR.SRC}/**/_**/*.pug`,
-    `!${DIR.SRC}/**/_*.pug`
-  ],
-  dest: `${DIR.DEST}${DIR.PATH}`,
-  opts: {
-    pretty: true
-  }
 };
 
 module.exports.sass = {
@@ -67,9 +57,9 @@ module.exports.sass = {
 
 module.exports.replace_html = {
   src: [
-    `${DIR.DEST}${DIR.PATH}/**/*.html`
+    `${DIR.SRC}${DIR.PATH}/partials/**/*.html`
   ],
-  dest: `${DIR.BUILD}${DIR.PATH}`,
+  dest: `${DIR.DEST}${DIR.PATH}`,
   path: `${DIR.PATH}`
 };
 
@@ -78,9 +68,14 @@ module.exports.minify_css = {
   dest: `${DIR.BUILD}${DIR.PATH}/css`
 };
 
+module.exports.javascript = {
+  src: `${DIR.SRC}/js/**/*.js`,
+  dest: `${DIR.SRC}${DIR.PATH}/`
+}
+
 module.exports.uglify = {
   src: [
-    `./${DIR.DEST}${DIR.PATH}/js/main.js`,
+    `./${DIR.DEST}${DIR.PATH}/js/app.js`,
   ],
   dest: `${DIR.BUILD}${DIR.PATH}/js`,
   opts: {
@@ -101,6 +96,21 @@ module.exports.copy_vendor_script_to_build = {
   ],
   dest: `${DIR.BUILD}${DIR.PATH}/js/vendor/`
 };
+
+module.exports.imagemin = {
+  src: [
+    `${DIR.DEST}${DIR.PATH}/css/images/*.{jpg,jpeg,png,gif}`
+  ],
+  dest: `${DIR.BUILD}${DIR.PATH}/images`
+};
+
+
+module.exports.wiredep = {
+  src: [
+    `${DIR.SRC}${DIR.PATH}/index.html`
+  ],
+  dest: `${DIR.DEST}${DIR.PATH}`
+}
 
 module.exports.clean = {
   path: [`${DIR.BUILD}${DIR.PATH}`]
