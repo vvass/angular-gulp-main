@@ -6,6 +6,5 @@ const conf = require('../conf').wiredep;
 
 gulp.task('wiredep', () => {
   return gulp.src(conf.src)
-    .pipe(wiredep())
-    .pipe(gulp.dest(conf.dest));
+    .pipe(wiredep());
 });

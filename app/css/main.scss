@@ -9,5 +9,20 @@
 @import "foundation/_variables";
 
 // Base
-@import "foundation/_normalize";
 @import "foundation/_global";
+
+
+/* === Variables === */
+@import 'foundation/variables';
+
+
+
+/* === Layout === */
+@import 'foundation/layout';
+
+/* === Global === */
+@import 'foundation/global';
+
+/* === Components === */
+@import 'components/buttons';
+@import 'components/form';

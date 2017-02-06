@@ -10,10 +10,11 @@ angular
 Configuration.$inject = ['$routeProvider'];
 
 function Configuration($routeProvider) {
+
   $routeProvider
     .when('/login', {
-      // templateUrl: '<p>Hello</p>'
-      template: '<p>Hello</p>'
+      templateUrl: './login/login-page.html'
+      // template: '<p>Hello</p>'
 
     })
     .otherwise({redirectTo: '/error'});;
@@ -23,9 +24,8 @@ function Configuration($routeProvider) {
 
 /**
  * @namespace loginDirective
- * @desc      This is a test directive
+ * @desc      This is a login directive for the login page.
  * @memberOf  loginPageDirectives
- * @returns   {JSON}
  */
 
 angular
@@ -34,7 +34,33 @@ angular
 
 function loginDirectives(){
   return {
-    restrict : "A",
-    template : "../partials/login/login-page.html"
+    restrict : "AEC",
+    template : "./login/login-page.html"
   }
 };
+/**
+ * @namespace StorePasswordController
+ * @desc      This is how we store users to the couchbase server under 'Users'
+ * @memberOf  loginPageControllers
+ */
+
+
+angular
+  .module('app')
+  .controller('StorePasswordController', StorePasswordController);
+
+function StorePasswordController() {
+  var vm = this;
+
+  /*
+   *  @namespace setUser
+   *  @desc      Main function to store users.
+   *  @memberOf  StorePasswordController
+   */
+  function setUser() {
+    console.log("Storing user!!")
+  }
+
+
+
+}

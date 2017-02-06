@@ -10,10 +10,11 @@ angular
 Configuration.$inject = ['$routeProvider'];
 
 function Configuration($routeProvider) {
+
   $routeProvider
     .when('/login', {
-      // templateUrl: '<p>Hello</p>'
-      template: '<p>Hello</p>'
+      templateUrl: './login/login-page.html'
+      // template: '<p>Hello</p>'
 
     })
     .otherwise({redirectTo: '/error'});;

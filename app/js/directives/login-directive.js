@@ -1,9 +1,8 @@
 
 /**
  * @namespace loginDirective
- * @desc      This is a test directive
+ * @desc      This is a login directive for the login page.
  * @memberOf  loginPageDirectives
- * @returns   {JSON}
  */
 
 angular
@@ -12,7 +11,7 @@ angular
 
 function loginDirectives(){
   return {
-    restrict : "A",
-    template : "../partials/login/login-page.html"
+    restrict : "AEC",
+    template : "./login/login-page.html"
   }
 };

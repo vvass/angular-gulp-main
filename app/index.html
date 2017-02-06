@@ -8,13 +8,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/main.css">
 
-    <!-- bower:css -->
+    <!-- bower:css --> <!--TODO this is not loading correctly with wiredep-->
     <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css"/>
     <!-- endbower -->
 
 
 </head>
-<body>
+<body class="login-body">
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please
         <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -22,7 +24,7 @@
 
     <div ng-view></div>
 
-    <!-- bower:js -->
+    <!-- bower:js --> <!--TODO this is not loading correctly with wiredep-->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>

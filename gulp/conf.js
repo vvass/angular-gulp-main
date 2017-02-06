@@ -12,6 +12,7 @@ module.exports.serve = {
   notify: true,
   startPath: DIR.PATH,
   ghostMode: false,
+  open: false, // Useful for dev, stops the browser from opening new windows
   server: {
     baseDir: DIR.SRC,
     port: 3000,
@@ -56,9 +57,9 @@ module.exports.sass = {
 
 module.exports.replace_html = {
   src: [
-    `${DIR.DEST}${DIR.PATH}/**/*.html`
+    `${DIR.SRC}${DIR.PATH}/partials/**/*.html`
   ],
-  dest: `${DIR.BUILD}${DIR.PATH}`,
+  dest: `${DIR.DEST}${DIR.PATH}`,
   path: `${DIR.PATH}`
 };
 
@@ -95,6 +96,14 @@ module.exports.copy_vendor_script_to_build = {
   ],
   dest: `${DIR.BUILD}${DIR.PATH}/js/vendor/`
 };
+
+module.exports.imagemin = {
+  src: [
+    `${DIR.DEST}${DIR.PATH}/css/images/*.{jpg,jpeg,png,gif}`
+  ],
+  dest: `${DIR.BUILD}${DIR.PATH}/images`
+};
+
 
 module.exports.wiredep = {
   src: [

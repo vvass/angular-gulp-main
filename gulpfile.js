@@ -11,7 +11,8 @@ requireDir('./gulp/tasks');
 gulp.task('predefault', cb => {
   runSequence(
     'javascript',
-    ['sass', 'watchify', 'copy-vendor-script'],
+    'replace-html',
+    ['sass', 'watchify', 'copy-vendor-script','imagemin'],
     'wiredep',
     'serve',
     cb
@@ -20,8 +21,8 @@ gulp.task('predefault', cb => {
 
 gulp.task('default', ['predefault'], () => {
   gulp.watch(
-    [`./${DIR.SRC}/**/*.html`],
-    reload
+    [`./${DIR.SRC}/partials/**/*.html`],
+    ['replace-html',reload]
   );
 
   gulp.watch(
@@ -31,7 +32,7 @@ gulp.task('default', ['predefault'], () => {
 
   gulp.watch(
     [`./${DIR.SRC}/**/*.js`],
-    reload
+    ['javascript', reload]
   );
 
   gulp.watch(
@@ -44,7 +45,6 @@ gulp.task('build', cb => {
   runSequence(
     'clean',
     ['sass'],
-    'replace-html',
     ['minify-css', 'browserify'],
     'uglify',
     'copy-vendor-script-to-build',
